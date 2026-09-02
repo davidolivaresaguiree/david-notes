@@ -29,13 +29,16 @@ closeInfo.addEventListener('click', (event) => {
 const openNota = document.querySelector('.nota');
 const crearNota = document.querySelector('.nota-crear');
 const closeNota = document.querySelector('.close-nota');
+const notaHidden = document.querySelector('.nota');
 
 openNota.addEventListener('click', () => {
   crearNota.classList.add('nota-crear-show');
+  notaHidden.classList.add('nota-close');
 });
 
 closeNota.addEventListener('click', () => {
   crearNota.classList.remove('nota-crear-show');
+  notaHidden.classList.remove('nota-close');
 });
 
 //editor
