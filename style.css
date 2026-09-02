@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Pixelify+Sans:wght@400..700&display=swap');
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #131316;
+    font-family: "Inter", sans-serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+.more button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 43px;
+    height: 43px;
+    border-radius: 50px;
+    border: 1px solid #222;
+    background-color: #0e0e11;
+    cursor: pointer;
+    transition: 0.2s;
+    margin: 10px;
+}
+
+.more button svg {
+    color: #e4e2e5;
+}
+
+.profile button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 43px;
+    height: 43px;
+    border-radius: 50px;
+    border: 1px solid #222;
+    background-color: #0e0e11;
+    cursor: pointer;
+    transition: 0.2s;
+    margin: 10px;
+}
+
+.profile button svg {
+    color: #e4e2e5;
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #0e0e11;
+    border: 1px solid #222;
+    width: 160px;
+    height: 43px;
+    border-radius: 30px;
+}
+
+header .nav-bar {
+    display: flex;
+}
+
+header .nav-bar a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #e4e2e5;
+    text-decoration: none;
+    margin: 5px;
+    padding: 6px;
+    border-radius: 30px;
+    background-color: #252528;
+    transition: 0.2s;
+}
+
+header .nav-bar a .select {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1e304f;
+    text-decoration: none;
+    margin: 5px;
+    padding: 6px;
+    border-radius: 30px;
+    background-color: #b4c7ed;
+    transition: 0.2s;
+}
+
+header .nav-bar a:hover {
+    transition: 0.5s;
+    background-color: #272729;
+    padding: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+header .nav-bar a svg {
+    width: 25px;
+}
+
+.nota-rapida {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 70px;
+    width: 100%;
+    height: 500px;
+}
+
+.nota-rapida .nota {
+    width: 65%;
+    height: 85%;
+
+    background-color: #1b1b1e;
+    border-radius: 30px;
+    border: 2px solid #222;
+
+    cursor: pointer;
+}
+
+.nota-rapida .nota:hover {
+    background-color: #2b2b2e;
+}
+
+.nota .contenido-nota {
+    margin: 30px;
+}
+
+.nota-rapida .nota .contenido-nota h1 {
+    color: #e4e2e5;
+    font-size: 45px;
+}
+
+.nota-rapida .nota .contenido-nota p {
+    color: #54555b;
+    font-size: 27px;
+}
+
+.marco-config {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #111111bd;
+    display: flex;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.modal-config {
+    margin: auto;
+    background-color: #131316;
+    border: 1px solid #28292b;
+    border-radius: 30px;
+
+    width: 50%;
+    height: 400px;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.modal-config-show {
+    opacity: 1;
+    pointer-events: unset;
+}
+
+.opciones-config {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    height: 50px;
+    margin-top: 10px;
+}
+
+.opciones-config button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 43px;
+    height: 43px;
+    border-radius: 50px;
+    border: 1px solid #222;
+    background-color: #0e0e11;
+    cursor: pointer;
+    transition: 0.2s;
+    color: white;
+}
+
+.opciones-config p {
+    color: #e4e2e5;
+    font-size: 25px;
+}
+
+.contenido-congif {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.opciones-contenido {
+    display: flex;
+    flex-direction: column;
+    width: 160px;
+    height: 300px;
+
+    border: none;
+    border-right: 1px solid #54555b;
+}
+
+.opciones-contenido button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    height: 45px;
+    margin-bottom: 10px;
+    border: none;
+    color: #e4e2e5;
+    cursor: pointer;
+    background: transparent;
+    font-size: 15px;
+}
+
+.opciones-contenido button:hover {
+    background-color: #2b2b2e;
+}
+
+.opciones-contenido button svg {
+    margin-right: 6px;
+    width: 30px;
+}
+
+.config-opciones-modal {
+    width: 450px;
+    height: 300px;
+}
+
+.apariencias {
+    margin: 15px;
+}
+
+.apariencias button#cambiar-apariencia-azul {
+    background: linear-gradient(25deg, #b3c5ff, #0045b2);
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    border: 5px solid #424656;
+    border-radius: 50px;
+}
+
+.config-opciones-modal .informacion {
+    width: 30%;
+    height: 300px;
+    background-color: #131316;
+
+    position: absolute;
+    top: 170px;
+    opacity: 0;
+    
+    pointer-events: none;
+    margin: 10px;
+}
+
+.informacion h2{
+    color: #e4e2e5;
+    margin-bottom: 0;
+}
+.informacion p {
+    color: #8e9098;
+    margin-top: 0;
+}
+
+.informacion button{
+    width: 80%;
+    height: 50px;
+    border: none;
+    border-radius: 15px;
+    background-color:#1f1f22;
+    color: #e4e2e5;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 16px;
+}
+
+.informacion button:hover{
+    background-color: #2f2f31;
+    border: 2px solid #51535a;
+    transition: 0.5s;
+}
+
+.informacion button a{
+    color: #e4e2e5;
+    text-decoration: none;
+}
+
+.informacion.informacion-show{
+    pointer-events: unset;
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .nota-rapida .nota {
+        width: 85%;
+        height: 95%;
+    }
+
+    .nota .contenido-nota {
+        margin: 20px;
+    }
+
+    .nota-rapida .nota .contenido-nota h1 {
+        font-size: 40px;
+    }
+
+    .modal-config {
+        width: 85%;
+    }
+
+    .opciones-contenido {
+        width: 70px;
+        height: 300px;
+        border: none;
+        border-right: 1px solid #54555b;
+    }
+
+    .opciones-contenido button {
+        width: 60px;
+    }
+
+    .opciones-contenido button p {
+        display: none;
+    }
+
+    .config-opciones-modal {
+        width: 260px;
+    }
+
+}
