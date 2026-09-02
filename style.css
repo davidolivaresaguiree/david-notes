@@ -151,6 +151,84 @@ header .nav-bar a svg {
     font-size: 27px;
 }
 
+.nota-rapida .nota-crear {
+    width: 85%;
+    height: 80%;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: #1b1b1e;
+    border-radius: 30px;
+    border: 2px solid #222;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.nota-rapida .nota-crear h1 {
+    color: #e4e2e5;
+    font-size: 45px;
+    margin: 1px;
+}
+
+.nota-rapida .nota-crear.nota-crear-show {
+    opacity: 1;
+    pointer-events: unset;
+}
+
+.nota-crear textarea {
+    font-family: "Inter", sans-serif;;
+
+    height: 65%;
+    width: 90%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    resize: none;
+    border: none;
+    background-color: #1b1b1e;
+    border-radius: 10px;
+
+    font-size: 20px;
+    color: #fff;
+}
+
+.nota-crear textarea:focus{
+    outline: none;
+}
+
+.opciones-guardar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.opciones-guardar button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    background-color: #0e0e11;
+    border: #000;
+    cursor: pointer;
+}
+
+
+
 .marco-config {
     position: fixed;
     top: 0;
@@ -277,49 +355,50 @@ header .nav-bar a svg {
     position: absolute;
     top: 170px;
     opacity: 0;
-    
+
     pointer-events: none;
     margin: 10px;
 }
 
-.informacion h2{
+.informacion h2 {
     color: #e4e2e5;
     margin-bottom: 0;
 }
+
 .informacion p {
     color: #8e9098;
     margin-top: 0;
 }
 
-.informacion button{
+.informacion button {
     width: 80%;
     height: 50px;
     border: none;
     border-radius: 15px;
-    background-color:#1f1f22;
+    background-color: #1f1f22;
     color: #e4e2e5;
     cursor: pointer;
     transition: 0.2s;
     font-size: 16px;
 }
 
-.informacion button:hover{
+.informacion button:hover {
     background-color: #2f2f31;
     border: 2px solid #51535a;
     transition: 0.5s;
 }
 
-.informacion button a{
+.informacion button a {
     color: #e4e2e5;
     text-decoration: none;
 }
 
-.informacion.informacion-show{
+.informacion.informacion-show {
     pointer-events: unset;
     opacity: 1;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 780px) {
     .nota-rapida .nota {
         width: 85%;
         height: 95%;
@@ -331,6 +410,11 @@ header .nav-bar a svg {
 
     .nota-rapida .nota .contenido-nota h1 {
         font-size: 40px;
+    }
+
+    .nota-rapida .nota-crear {
+        width: 85%;
+        height: 80%;
     }
 
     .modal-config {
@@ -354,6 +438,15 @@ header .nav-bar a svg {
 
     .config-opciones-modal {
         width: 260px;
+    }
+
+    .informacion {
+        width: 60%;
+    }
+
+    .informacion button {
+        width: 100%;
+        height: 50px;
     }
 
 }
