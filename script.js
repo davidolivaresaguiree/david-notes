@@ -37,3 +37,13 @@ openNota.addEventListener('click', () => {
 closeNota.addEventListener('click', () => {
   crearNota.classList.remove('nota-crear-show');
 });
+
+//editor
+
+function formatDoc(cmd, value=null){
+    if(value){
+        document.execCommand(cmd, false, value);
+    } else {
+        document.execCommand(cmd);
+    }
+}
