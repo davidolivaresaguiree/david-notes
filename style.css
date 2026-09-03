@@ -506,6 +506,7 @@ header .nav-bar a svg {
 .config-opciones-modal {
     width: 450px;
     height: 300px;
+    position: relative;
 }
 
 .apariencias {
@@ -534,16 +535,23 @@ header .nav-bar a svg {
 
 
 .config-opciones-modal .informacion {
-    width: 32%;
-    height: 300px;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
     background-color: #131316;
 
-    position: absolute;
-    top: 170px;
-    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 20px;
 
+    opacity: 0;
     pointer-events: none;
-    margin: 10px;
+    transition: 0.3s;
 }
 
 .informacion h2 {
@@ -605,6 +613,7 @@ header .nav-bar a svg {
 
     .modal-config {
         width: 85%;
+        height: 430px;
     }
 
     .btn-toolbar {
@@ -625,7 +634,9 @@ header .nav-bar a svg {
     }
 
     .opciones-contenido {
-        width: 70px;
+        display: flex;
+        align-items: center;
+        width: 80px;
         height: 300px;
         border: none;
         border-right: 1px solid #54555b;
@@ -641,6 +652,7 @@ header .nav-bar a svg {
 
     .config-opciones-modal {
         width: 300px;
+        height: 350px;
     }
 
     .visualizar-notas {
@@ -653,9 +665,12 @@ header .nav-bar a svg {
         width: 95%;
     }
 
-    .config-opciones-modal .informacion {
-        width: 50%;
-        top: 280px;
+    .informacion h2 {
+        font-size: 20px;
+    }
+
+    .informacion p {
+        font-size: 14px;
     }
 
     .informacion button {
