@@ -7,6 +7,12 @@ body {
     flex-direction: column;
     background-color: #131316;
     font-family: "Inter", sans-serif;
+    transition: 0.2s;
+}
+
+body.bg-azul{
+    background-color: #10131c;
+    transition: 0.5s;
 }
 
 header {
@@ -513,10 +519,22 @@ header .nav-bar a svg {
     cursor: pointer;
     border: 5px solid #424656;
     border-radius: 50px;
+    margin-left: 5px;
 }
 
+.apariencias button#apariencia-normal {
+    background-color: #131316;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    border: 5px solid #424656;
+    border-radius: 50px;
+    margin-left: 5px;
+}
+
+
 .config-opciones-modal .informacion {
-    width: 30%;
+    width: 32%;
     height: 300px;
     background-color: #131316;
 
@@ -622,7 +640,7 @@ header .nav-bar a svg {
     }
 
     .config-opciones-modal {
-        width: 260px;
+        width: 300px;
     }
 
     .visualizar-notas {
@@ -635,8 +653,9 @@ header .nav-bar a svg {
         width: 95%;
     }
 
-    .informacion {
-        width: 60%;
+    .config-opciones-modal .informacion {
+        width: 50%;
+        top: 280px;
     }
 
     .informacion button {
