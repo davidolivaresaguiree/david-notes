@@ -8,11 +8,10 @@ btnMostrarNotas.addEventListener("click", () =>{
 });
 
 btnCerrarNotas.addEventListener("click", () => {
+    inputNota.innerHTML = "";
     notasGuardadas.classList.remove('notas-guardadas-show');
     notaHidden.classList.remove('nota-close');
 });
-
-
 
 const openConfig = document.querySelector('.open-config');
 const modalConfig = document.querySelector('.marco-config');
@@ -42,6 +41,17 @@ closeInfo.addEventListener('click', (event) => {
     informacionModal.classList.remove('informacion-show');
 });
 
+const btnBodyNormal = document.getElementById("apariencia-normal")
+const btnBodyAzul = document.getElementById("cambiar-apariencia-azul");
+
+btnBodyNormal.addEventListener("click", () =>{
+    document.body.classList.remove("bg-azul");
+});
+
+btnBodyAzul.addEventListener("click", () =>{
+    document.body.classList.add("bg-azul");
+});
+    
 const openNota = document.querySelector('.nota');
 const crearNota = document.querySelector('.nota-crear');
 const closeNota = document.querySelector('.close-nota');
