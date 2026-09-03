@@ -134,7 +134,7 @@ header .nav-bar a svg {
     opacity: 1;
 }
 
-.nota-rapida .nota.nota-close{
+.nota-rapida .nota.nota-close {
     opacity: 0;
     pointer-events: none;
     transition: 0.3s;
@@ -192,7 +192,7 @@ header .nav-bar a svg {
     pointer-events: unset;
 }
 
-.container{
+.container {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -202,7 +202,7 @@ header .nav-bar a svg {
     min-height: 0;
 }
 
-.btn-toolbar{
+.btn-toolbar {
     background-color: #292a2c;
     padding: 5px;
     width: 500px;
@@ -212,7 +212,7 @@ header .nav-bar a svg {
     border-radius: 30px;
 }
 
-.btn-toolbar button{
+.btn-toolbar button {
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -226,16 +226,16 @@ header .nav-bar a svg {
     background: transparent;
 }
 
-.btn-toolbar button:hover{
+.btn-toolbar button:hover {
     background-color: #363739;
 }
 
-.btn-toolbar button svg{
+.btn-toolbar button svg {
     width: 20px;
     color: #c5c6ce;
 }
 
-.contenido{
+.contenido {
     margin-top: 20px;
     padding: 10px;
     outline: none;
@@ -276,7 +276,7 @@ header .nav-bar a svg {
     background-color: #54555b;
 }
 
-.opciones-guardar{
+.opciones-guardar {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -285,7 +285,7 @@ header .nav-bar a svg {
     margin-bottom: 24px;
 }
 
-.opciones-guardar button{
+.opciones-guardar button {
     width: 40px;
     height: 40px;
     border-radius: 50px;
@@ -300,7 +300,102 @@ header .nav-bar a svg {
     cursor: pointer;
 }
 
+.notas-guardadas {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
+    width: 100%;
+    height: 500px;
+    background-color: #131316;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.2s;
+}
+
+.notas-guardadas.notas-guardadas-show{
+    opacity: 1;
+    pointer-events: unset;
+    transition: 0.5s;
+}
+
+.visualizar-notas {
+    display: flex;
+    justify-content: center;
+    width: 65%;
+    height: 85%;
+
+    background-color: #1b1b1e;
+    border-radius: 30px;
+    border: 2px solid #222;
+
+    opacity: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: auto;
+}
+
+.notas-guardadas button {
+
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    background-color: #0e0e11;
+    border: #000;
+    cursor: pointer;
+}
+
+.card-notas {
+    background-color: #292a2c;
+    border: 1px solid #51535a;
+    border-radius: 20px;
+    width: 50%;
+    max-width: 50%;
+    height: 180px;
+    margin: 10px;
+
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+.card-notas p {
+    color: #e4e2e5;
+    margin: 5px;
+}
+
+.card-notas button {
+    margin-top: auto;
+    align-self: flex-start;
+
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    background-color: #0e0e11;
+    border: #000;
+    cursor: pointer;
+}
 
 .marco-config {
     position: fixed;
@@ -494,19 +589,19 @@ header .nav-bar a svg {
         width: 85%;
     }
 
-    .btn-toolbar{
+    .btn-toolbar {
         margin-top: 10px;
         padding: 0;
         width: 98%;
         height: 40px;
     }
 
-    .btn-toolbar button{
+    .btn-toolbar button {
         width: 30px;
         height: 30px;
     }
 
-    .contenido{
+    .contenido {
         height: 400px;
         max-height: 400px;
     }
@@ -528,6 +623,16 @@ header .nav-bar a svg {
 
     .config-opciones-modal {
         width: 260px;
+    }
+
+    .visualizar-notas {
+        flex-direction: column;
+        width: 85%;
+        height: 95%;
+    }
+
+    .card-notas {
+        width: 95%;
     }
 
     .informacion {
