@@ -615,16 +615,6 @@ header .nav-bar a svg {
     margin: 15px;
 }
 
-.apariencias button#cambiar-apariencia-azul {
-    background-color: white;
-    width: 80px;
-    height: 80px;
-    cursor: pointer;
-    border: 5px solid #424656;
-    border-radius: 50px;
-    margin-left: 5px;
-}
-
 .apariencias button#apariencia-normal {
     background-color: #131316;
     width: 80px;
@@ -635,7 +625,7 @@ header .nav-bar a svg {
     margin-left: 5px;
 }
 
-.apariencias button#apariencia-clara {
+.apariencias button#cambiar-apariencia-clara {
     background-color: #f4f4f6;
     width: 80px;
     height: 80px;
