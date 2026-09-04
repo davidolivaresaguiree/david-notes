@@ -43,13 +43,32 @@ closeInfo.addEventListener('click', (event) => {
 
 const btnBodyNormal = document.getElementById("apariencia-normal")
 const btnBodyAzul = document.getElementById("cambiar-apariencia-azul");
+const btnBodyClaro = document.getElementById("cambiar-apariencia-clara");
+
+const TEMAS = ["bg-claro"];
+
+function aplicarTema(tema){
+    document.body.classList.remove(...TEMAS);
+
+    if (tema){
+        document.body.classList.add(tema);
+    }
+
+    localStorage.setItem("tema", tema || "normal");
+}
+
+//guardar al salir tema
+const temaGuardado = localStorage.getItem("tema");
+if(temaGuardado && temaGuardado !== "normal"){
+    document.body.classList.add(temaGuardado);
+}
 
 btnBodyNormal.addEventListener("click", () =>{
-    document.body.classList.remove("bg-azul");
+    aplicarTema(null);//tema por defecto
 });
 
-btnBodyAzul.addEventListener("click", () =>{
-    document.body.classList.add("bg-azul");
+btnBodyClaro.addEventListener("click", () =>{
+    aplicarTema("bg-claro");
 });
     
 const openNota = document.querySelector('.nota');
@@ -78,25 +97,63 @@ function formatDoc(cmd, value = null) {
 }
 
 const btnGuadarNota = document.getElementById("guardar-nota");
-const verNotas = document.getElementById("visualizar-notas");
+const verNotas = document.getElementById("cards-notas-guardadas");
 const inputNota = document.getElementById("input-nota");
 
-btnGuadarNota.addEventListener("click", function () {
+const CLAVE_NOTAS = "notas";
+
+function obtenerNotasGuardadas() {
+    const datos = localStorage.getItem(CLAVE_NOTAS);
+    return datos ? JSON.parse(datos) : [];
+}
+
+function guardarNotasEnStorage(notas) {
+    localStorage.setItem(CLAVE_NOTAS, JSON.stringify(notas));
+}
+
+// dibuja una tarjeta de nota en pantalla y engancha su botón de eliminar
+function crearCardNota(id, contenidoHTML) {
     const card = document.createElement("div");
     card.classList.add("card-notas");
+    card.dataset.id = id;
     verNotas.appendChild(card);
 
     const notaParrafo = document.createElement("p");
-    notaParrafo.innerHTML = inputNota.innerHTML;
+    notaParrafo.innerHTML = contenidoHTML;
     card.appendChild(notaParrafo);
 
     const eliminarNota = document.createElement("button");
     eliminarNota.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash2-icon lucide-trash-2"><path d="M10 11v6"/><path d="M14 11v6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>`;
     card.appendChild(eliminarNota);
 
-    eliminarNota.addEventListener("click", function(){
+    eliminarNota.addEventListener("click", function () {
         card.remove();
+
+        const notasActualizadas = obtenerNotasGuardadas().filter((nota) => nota.id !== id);
+        guardarNotasEnStorage(notasActualizadas);
     });
+}
+
+btnGuadarNota.addEventListener("click", function () {
+    const contenidoHTML = inputNota.innerHTML;
+
+    //no guarda notas vacias :v
+    if (inputNota.textContent.trim() === "") {
+        inputNota.innerHTML = "";
+        return;
+    }
+
+    const id = Date.now().toString();
+
+    const notas = obtenerNotasGuardadas();
+    notas.push({ id, contenido: contenidoHTML });
+    guardarNotasEnStorage(notas);
+
+    crearCardNota(id, contenidoHTML);
 
     inputNota.innerHTML = "";
+});
+
+obtenerNotasGuardadas().forEach((nota) => {
+    crearCardNota(nota.id, nota.contenido);
 });
