@@ -317,8 +317,9 @@ header .nav-bar a svg {
 
     width: 100%;
     height: 600px;
-    border: 1px solid #fff;
-    background-color: #131316;
+
+    background-color: transparent;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -337,6 +338,8 @@ header .nav-bar a svg {
 
 .visualizar-notas {
     display: flex;
+    align-items: center;
+    flex-direction: column;
     justify-content: center;
     width: 65%;
     height: 75%;
@@ -353,20 +356,41 @@ header .nav-bar a svg {
     overflow-x: auto;
 }
 
-.notas-guardadas button {
+.header-notas{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    border-bottom: 1px solid #e4e2e5;
+    margin: 0;
+}
 
-    width: 40px;
-    height: 40px;
-    border-radius: 50px;
+.header-notas p{
+    font-size: 22px;
+    color: #e4e2e5;
+    margin: 20px;
+}
 
+.header-notas button{
     display: flex;
     align-items: center;
     justify-content: center;
-
-    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50px;
+    border: none;
     background-color: #0e0e11;
-    border: #000;
+    color: white;
     cursor: pointer;
+}
+
+.cards-notas-guardadas{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    height: 90%;
+    width: 90%;
+    background: transparent;
 }
 
 .card-notas {
@@ -413,7 +437,8 @@ header .nav-bar a svg {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #111111bd;
+    background-color: #111111c4;
+    backdrop-filter: blur(3px);
     display: flex;
 
     opacity: 0;
@@ -647,16 +672,15 @@ header .nav-bar a svg {
     }
 
     .opciones-contenido {
-        display: flex;
+        flex-direction: column;
         align-items: center;
-        width: 80px;
-        height: 300px;
-        border: none;
+        width: 64px;
+        padding: 8px 0;
         border-right: 1px solid #54555b;
     }
 
     .opciones-contenido button {
-        width: 60px;
+        width: 50px;
     }
 
     .opciones-contenido button p {
