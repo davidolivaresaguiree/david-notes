@@ -438,22 +438,42 @@ header .nav-bar a svg {
 }
 
 .cards-notas-guardadas{
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-content: flex-start;
+    justify-items: stretch;
+    gap: 20px;
     height: 90%;
     width: 90%;
+    overflow-y: auto;
+    padding: 5px 10px 20px;
+    box-sizing: border-box;
     background: transparent;
+
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) transparent;
+}
+
+.cards-notas-guardadas::-webkit-scrollbar {
+    width: 8px;
+}
+
+.cards-notas-guardadas::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.cards-notas-guardadas::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb);
+    border-radius: 10px;
 }
 
 .card-notas {
     background-color: var(--bg-muted);
     border: 1px solid var(--border-strong);
     border-radius: 20px;
-    width: 50%;
-    max-width: 50%;
+    width: 100%;
     height: 180px;
-    margin: 10px;
+    margin: 0;
 
     display: flex;
     flex-direction: column;
@@ -595,7 +615,7 @@ header .nav-bar a svg {
     margin: 15px;
 }
 
-.apariencias button#cambiar-apariencia-clara {
+.apariencias button#cambiar-apariencia-azul {
     background-color: white;
     width: 80px;
     height: 80px;
@@ -761,8 +781,12 @@ header .nav-bar a svg {
         height: 95%;
     }
 
+    .cards-notas-guardadas {
+        grid-template-columns: 1fr;
+    }
+
     .card-notas {
-        width: 95%;
+        width: 100%;
     }
 
     .informacion h2 {
