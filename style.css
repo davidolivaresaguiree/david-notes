@@ -1,17 +1,70 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Pixelify+Sans:wght@400..700&display=swap');
 
+:root {
+    --bg-body: #131316;
+    --bg-surface: #1b1b1e;
+    --bg-surface-hover: #2b2b2e;
+    --bg-elevated: #0e0e11;
+    --bg-muted: #292a2c;
+    --bg-muted-hover: #363739;
+    --bg-pill: #252528;
+    --bg-pill-hover: #272729;
+    --border-color: #222;
+    --border-strong: #51535a;
+    --text-primary: #e4e2e5;
+    --text-secondary: #54555b;
+    --text-muted: #8e9098;
+    --icon-color: #c5c6ce;
+    --elevated-icon: white;
+    --scrollbar-thumb: #3a3b3e;
+    --save-btn-bg: #373d4b;
+    --save-btn-icon: white;
+    --modal-border: #28292b;
+    --info-btn-bg: #1f1f22;
+    --info-btn-hover: #2f2f31;
+    --overlay-bg: #111111c4;
+}
+
 body {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: #131316;
+    background-color: var(--bg-body);
     font-family: "Inter", sans-serif;
     transition: 0.2s;
 }
 
 body.bg-azul {
-    background-color: #10131c;
+    --bg-body: #10131c;
+    transition: 0.5s;
+}
+
+/* Modo claro: solo reasignamos las variables, el resto del CSS
+   ya sabe qué hacer porque usa var(--...) en lugar de colores fijos */
+body.bg-claro {
+    --bg-body: #f4f4f6;
+    --bg-surface: #ffffff;
+    --bg-surface-hover: #f0f0f2;
+    --bg-elevated: #ffffff;
+    --bg-muted: #ececed;
+    --bg-muted-hover: #e2e2e4;
+    --bg-pill: #ececee;
+    --bg-pill-hover: #e2e2e5;
+    --border-color: #dcdce0;
+    --border-strong: #c7c7cc;
+    --text-primary: #1c1c1e;
+    --text-secondary: #8a8a8e;
+    --text-muted: #6b6b70;
+    --icon-color: #4a4a4e;
+    --elevated-icon: #1c1c1e;
+    --scrollbar-thumb: #d0d0d4;
+    --save-btn-bg: #dbe3f7;
+    --save-btn-icon: #1e304f;
+    --modal-border: #e3e3e6;
+    --info-btn-bg: #f0f0f2;
+    --info-btn-hover: #e6e6e9;
+    --overlay-bg: #ffffffc4;
     transition: 0.5s;
 }
 
@@ -35,15 +88,15 @@ header {
     width: 43px;
     height: 43px;
     border-radius: 50px;
-    border: 1px solid #222;
-    background-color: #0e0e11;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-elevated);
     cursor: pointer;
     transition: 0.2s;
     margin: 10px;
 }
 
 .more button svg {
-    color: #e4e2e5;
+    color: var(--text-primary);
 }
 
 .profile button {
@@ -53,15 +106,15 @@ header {
     width: 43px;
     height: 43px;
     border-radius: 50px;
-    border: 1px solid #222;
-    background-color: #0e0e11;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-elevated);
     cursor: pointer;
     transition: 0.2s;
     margin: 10px;
 }
 
 .profile button svg {
-    color: #e4e2e5;
+    color: var(--text-primary);
 }
 
 .nav-bar {
@@ -69,8 +122,8 @@ header {
     align-items: center;
     justify-content: center;
 
-    background-color: #0e0e11;
-    border: 1px solid #222;
+    background-color: var(--bg-elevated);
+    border: 1px solid var(--border-color);
     width: 160px;
     height: 43px;
     border-radius: 30px;
@@ -84,12 +137,12 @@ header .nav-bar a {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #e4e2e5;
+    color: var(--text-primary);
     text-decoration: none;
     margin: 5px;
     padding: 6px;
     border-radius: 30px;
-    background-color: #252528;
+    background-color: var(--bg-pill);
     transition: 0.2s;
 }
 
@@ -108,7 +161,7 @@ header .nav-bar a .select {
 
 header .nav-bar a:hover {
     transition: 0.5s;
-    background-color: #272729;
+    background-color: var(--bg-pill-hover);
     padding: 8px;
     padding-left: 15px;
     padding-right: 15px;
@@ -132,9 +185,9 @@ header .nav-bar a svg {
     width: 65%;
     height: 85%;
 
-    background-color: #1b1b1e;
+    background-color: var(--bg-surface);
     border-radius: 30px;
-    border: 2px solid #222;
+    border: 2px solid var(--border-color);
 
     cursor: pointer;
     opacity: 1;
@@ -147,7 +200,7 @@ header .nav-bar a svg {
 }
 
 .nota-rapida .nota:hover {
-    background-color: #2b2b2e;
+    background-color: var(--bg-surface-hover);
 }
 
 .nota .contenido-nota {
@@ -155,12 +208,12 @@ header .nav-bar a svg {
 }
 
 .nota-rapida .nota .contenido-nota h1 {
-    color: #e4e2e5;
+    color: var(--text-primary);
     font-size: 45px;
 }
 
 .nota-rapida .nota .contenido-nota p {
-    color: #54555b;
+    color: var(--text-secondary);
     font-size: 27px;
 }
 
@@ -173,9 +226,9 @@ header .nav-bar a svg {
     left: 50%;
     transform: translate(-50%, -50%);
 
-    background-color: #1b1b1e;
+    background-color: var(--bg-surface);
     border-radius: 30px;
-    border: 2px solid #222;
+    border: 2px solid var(--border-color);
 
     display: flex;
     justify-content: flex-start;
@@ -188,7 +241,7 @@ header .nav-bar a svg {
 }
 
 .nota-rapida .nota-crear h1 {
-    color: #e4e2e5;
+    color: var(--text-primary);
     font-size: 45px;
     margin: 1px;
 }
@@ -209,7 +262,7 @@ header .nav-bar a svg {
 }
 
 .btn-toolbar {
-    background-color: #292a2c;
+    background-color: var(--bg-muted);
     padding: 5px;
     width: 500px;
     display: flex;
@@ -235,21 +288,21 @@ header .nav-bar a svg {
 }
 
 .btn-toolbar button:hover {
-    background-color: #363739;
+    background-color: var(--bg-muted-hover);
 }
 
 .btn-toolbar button svg {
     width: 20px;
     flex-shrink: 0;
-    color: #c5c6ce;
+    color: var(--icon-color);
 }
 
 .contenido {
     margin-top: 20px;
     padding: 10px;
     outline: none;
-    color: #e4e2e5;
-    background-color: #1b1b1e;
+    color: var(--text-primary);
+    background-color: var(--bg-surface);
     border-radius: 10px;
     width: 80%;
     max-width: 80%;
@@ -261,28 +314,28 @@ header .nav-bar a svg {
 
 .contenido:empty::before {
     content: attr(data-placeholder);
-    color: #54555b;
+    color: var(--text-secondary);
     pointer-events: none;
 }
 
 .contenido {
     scrollbar-width: thin;
-    scrollbar-color: #3a3b3e #1b1b1e;
+    scrollbar-color: var(--scrollbar-thumb) var(--bg-surface);
 }
 
 .contenido::-webkit-scrollbar-track {
-    background: #1b1b1e;
+    background: var(--bg-surface);
     border-radius: 10px;
 }
 
 .contenido::-webkit-scrollbar-thumb {
-    background-color: #3a3b3e;
+    background-color: var(--scrollbar-thumb);
     border-radius: 10px;
-    border: 2px solid #1b1b1e;
+    border: 2px solid var(--bg-surface);
 }
 
 .contenido::-webkit-scrollbar-thumb:hover {
-    background-color: #54555b;
+    background-color: var(--text-secondary);
 }
 
 .opciones-guardar {
@@ -303,8 +356,8 @@ header .nav-bar a svg {
     align-items: center;
     justify-content: center;
 
-    color: white;
-    background-color: #373d4b;
+    color: var(--save-btn-icon);
+    background-color: var(--save-btn-bg);
     border: #000;
     cursor: pointer;
 }
@@ -344,9 +397,9 @@ header .nav-bar a svg {
     width: 65%;
     height: 75%;
 
-    background-color: #1b1b1e;
+    background-color: var(--bg-surface);
     border-radius: 30px;
-    border: 2px solid #222;
+    border: 2px solid var(--border-color);
 
     opacity: 1;
 
@@ -361,13 +414,13 @@ header .nav-bar a svg {
     align-items: center;
     justify-content: space-between;
     width: 90%;
-    border-bottom: 1px solid #e4e2e5;
+    border-bottom: 1px solid var(--border-strong);
     margin: 0;
 }
 
 .header-notas p{
     font-size: 22px;
-    color: #e4e2e5;
+    color: var(--text-primary);
     margin: 20px;
 }
 
@@ -379,8 +432,8 @@ header .nav-bar a svg {
     height: 35px;
     border-radius: 50px;
     border: none;
-    background-color: #0e0e11;
-    color: white;
+    background-color: var(--bg-elevated);
+    color: var(--elevated-icon);
     cursor: pointer;
 }
 
@@ -394,8 +447,8 @@ header .nav-bar a svg {
 }
 
 .card-notas {
-    background-color: #292a2c;
-    border: 1px solid #51535a;
+    background-color: var(--bg-muted);
+    border: 1px solid var(--border-strong);
     border-radius: 20px;
     width: 50%;
     max-width: 50%;
@@ -409,7 +462,7 @@ header .nav-bar a svg {
 }
 
 .card-notas p {
-    color: #e4e2e5;
+    color: var(--text-primary);
     margin: 5px;
 }
 
@@ -425,8 +478,8 @@ header .nav-bar a svg {
     align-items: center;
     justify-content: center;
 
-    color: white;
-    background-color: #0e0e11;
+    color: var(--elevated-icon);
+    background-color: var(--bg-elevated);
     border: #000;
     cursor: pointer;
 }
@@ -437,7 +490,7 @@ header .nav-bar a svg {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #111111c4;
+    background-color: var(--overlay-bg);
     backdrop-filter: blur(3px);
     display: flex;
 
@@ -448,8 +501,8 @@ header .nav-bar a svg {
 
 .modal-config {
     margin: auto;
-    background-color: #131316;
-    border: 1px solid #28292b;
+    background-color: var(--bg-body);
+    border: 1px solid var(--modal-border);
     border-radius: 30px;
 
     width: 50%;
@@ -481,15 +534,15 @@ header .nav-bar a svg {
     width: 43px;
     height: 43px;
     border-radius: 50px;
-    border: 1px solid #222;
-    background-color: #0e0e11;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-elevated);
     cursor: pointer;
     transition: 0.2s;
-    color: white;
+    color: var(--elevated-icon);
 }
 
 .opciones-config p {
-    color: #e4e2e5;
+    color: var(--text-primary);
     font-size: 25px;
 }
 
@@ -506,7 +559,7 @@ header .nav-bar a svg {
     height: 300px;
 
     border: none;
-    border-right: 1px solid #54555b;
+    border-right: 1px solid var(--text-secondary);
 }
 
 .opciones-contenido button {
@@ -517,14 +570,14 @@ header .nav-bar a svg {
     height: 45px;
     margin-bottom: 10px;
     border: none;
-    color: #e4e2e5;
+    color: var(--text-primary);
     cursor: pointer;
     background: transparent;
     font-size: 15px;
 }
 
 .opciones-contenido button:hover {
-    background-color: #2b2b2e;
+    background-color: var(--bg-surface-hover);
 }
 
 .opciones-contenido button svg {
@@ -542,7 +595,7 @@ header .nav-bar a svg {
     margin: 15px;
 }
 
-.apariencias button#cambiar-apariencia-azul {
+.apariencias button#cambiar-apariencia-clara {
     background-color: white;
     width: 80px;
     height: 80px;
@@ -562,13 +615,23 @@ header .nav-bar a svg {
     margin-left: 5px;
 }
 
+.apariencias button#apariencia-clara {
+    background-color: #f4f4f6;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    border: 5px solid #424656;
+    border-radius: 50px;
+    margin-left: 5px;
+}
+
 
 .config-opciones-modal .informacion {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
-    background-color: #131316;
+    background-color: var(--bg-body);
 
     display: flex;
     flex-direction: column;
@@ -584,12 +647,12 @@ header .nav-bar a svg {
 }
 
 .informacion h2 {
-    color: #e4e2e5;
+    color: var(--text-primary);
     margin-bottom: 0;
 }
 
 .informacion p {
-    color: #8e9098;
+    color: var(--text-muted);
     margin-top: 0;
 }
 
@@ -598,21 +661,21 @@ header .nav-bar a svg {
     height: 50px;
     border: none;
     border-radius: 15px;
-    background-color: #1f1f22;
-    color: #e4e2e5;
+    background-color: var(--info-btn-bg);
+    color: var(--text-primary);
     cursor: pointer;
     transition: 0.2s;
     font-size: 16px;
 }
 
 .informacion button:hover {
-    background-color: #2f2f31;
-    border: 2px solid #51535a;
+    background-color: var(--info-btn-hover);
+    border: 2px solid var(--border-strong);
     transition: 0.5s;
 }
 
 .informacion button a {
-    color: #e4e2e5;
+    color: var(--text-primary);
     text-decoration: none;
 }
 
